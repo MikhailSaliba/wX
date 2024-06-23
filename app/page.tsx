@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(position => {
       console.log(position)
-      axios.get(`http://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&zoom=18&addressdetails=1`)
+      axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&zoom=18&addressdetails=1`)
         .then(res => {
           console.log(res.data)
           setCity(res.data.address.village);
