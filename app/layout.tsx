@@ -2,6 +2,7 @@
 // Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
 import { IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
+import { Analytics } from "@vercel/analytics/react"
 
 const fontHeading = IBM_Plex_Mono({
   weight: '700',
@@ -22,6 +23,7 @@ export default function Layout({ children }) {
     <html lang="en">
       <body className={fontHeading.variable + ' ' + fontBody.variable}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
