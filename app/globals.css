@@ -21,10 +21,33 @@
     --popover-foreground: 240 10% 3.9%;
     --border: 0 0% 60%;
     --input: 0 0% 60%;
-    --ring: 0 0% 10%;
+    --ring: 74 73% 51%;
     --radius: 0rem;
   }
 }
+  .dark {
+    --background: 0 0% 15%;
+    --foreground: 0 0% 90%;
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 90%;
+    --secondary: 0 0% 30%;
+    --secondary-foreground: 0 0% 90%;
+    --accent: 240 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 90%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 240 10% 96.1%;
+    --border: 0 0% 40%;
+    --input: 0 0% 40%;
+    --ring: 74 73% 51%;
+    --radius: 0rem;
+  }
+
 
 body {
   @apply font-body;

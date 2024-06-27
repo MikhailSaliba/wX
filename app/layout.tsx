@@ -1,8 +1,10 @@
 // This is the root layout component for your Next.js app.
 // Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
 import { IBM_Plex_Mono } from 'next/font/google'
+
 import './globals.css'
 import { Analytics } from "@vercel/analytics/react"
+import { ThemeProvider } from '@/components/ui/theme-provider'
 
 const fontHeading = IBM_Plex_Mono({
   weight: '700',
@@ -17,13 +19,23 @@ const fontBody = IBM_Plex_Mono({
   display: 'swap',
   variable: '--font-body',
 })
+
+
+
 //@ts-ignore
 export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className={fontHeading.variable + ' ' + fontBody.variable}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         {children}
         <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
