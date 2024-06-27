@@ -1,4 +1,5 @@
 export const CityDict = {
+	//@ts-ignore
 	"Tokyo": {lat: 35.6897, lon: 139.6922},
 	"Jakarta": {lat: -6.1750, lon: 106.8275},
 	"Delhi": {lat: 28.6100, lon: 77.2300},
