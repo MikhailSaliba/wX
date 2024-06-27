@@ -23,23 +23,29 @@ export function TypewriteInput({ text, id, autoNext = "", selected, callBack, on
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [inputWidth, setInputWidth] = React.useState<number>(200);
   let lastValue = "";
-  let changed = false;
+  const [initial, setInitial] = React.useState<boolean>(true);
+
 
   
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCount(count + 1);
-      if (goalText === "" && text !== "" && !changed) {
+      if (goalText === "" && text !== "" && initial) {
         setGoalText(text);
-        
       }
       if (selected) {
-        if (currentText.length < goalText.length) {
+        if (initial && currentText.length < goalText.length) {
+          
           setShowCursor(true);
           if (count - lastType > (Math.random() * 4 + 2)) {
             setLastType(count);
             setCurrentText(currentText + goalText[currentText.length]);
+           
+            if (currentText.length + 1 >=goalText.length) {
+              setInitial(false);
+            }
+            console.log(initial)
             for (const [key, value] of Object.entries(CityDict)) {
                 if (key.toLowerCase() === (currentText + goalText[currentText.length]).toLowerCase()) {
                    // console.log(`Does ${(currentText + goalText[currentText.length]).toLowerCase()} match ${key.toLowerCase()}`)
@@ -47,6 +53,7 @@ export function TypewriteInput({ text, id, autoNext = "", selected, callBack, on
                   break;
                 }
               }
+             
           }
         } else {
           if (count % 30 === 0) {
@@ -59,7 +66,7 @@ export function TypewriteInput({ text, id, autoNext = "", selected, callBack, on
     }, 10);
 
     return () => clearInterval(interval);
-  }, [currentText, count, goalText, selected, showCursor, lastType]);
+  }, [currentText, count, goalText, selected, showCursor, lastType, initial]);
 
   const updateInputWidth = () => {
     if (inputRef.current) {
@@ -94,7 +101,6 @@ export function TypewriteInput({ text, id, autoNext = "", selected, callBack, on
         onChange={e => {
           setValid(false);
           if (e.target.value !== lastValue) {
-            changed = true;
             onChange();
             setGoalText(e.target.value);
             lastValue = e.target.value;
@@ -122,7 +128,6 @@ export function TypewriteInput({ text, id, autoNext = "", selected, callBack, on
           }
         }}
         onClick={e=> {
-            changed = true;
             onChange();
         }}
       />
