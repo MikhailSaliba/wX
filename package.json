@@ -20,7 +20,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.396.0",
-    "next": "14.2.4",
+    "next": "^14.2.4",
     "next-themes": "^0.3.0",
     "offline-geocode-city": "^1.0.2",
     "openmeteo": "^1.1.4",
