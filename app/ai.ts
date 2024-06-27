@@ -35,8 +35,9 @@ export async function formQuerry(lat: number, long: number) {
         })
         
       });
-      const prompt = `Give a description of the weather without using any weather terms such as: "hot", "cold", "windy", "rainy", "specific tempature". Make this description concise and comedic. Use the below weather data to inform your description.\n\n${weatherDescrptions}`;
+      const prompt = `Give a description of the weather without using any weather terms such as or related to: "hot", "cold", "windy", "rainy", "specific tempature", "sky", "warm", "clouds", etc.. Make this description concise and comedic. It should be no more than 4 sentences. Use the below weather data to inform your description.\n\n${weatherDescrptions}`;
       return prompt
+      
 
     
 
