@@ -135,12 +135,9 @@ export default function Home() {
           <TypewriterBox text={forecast} selected={writerSelection["report"]} id="report" autoNext="share" callBack={updateSelection} />
           </div>
           <div className="mt-4 flex justify-end">
-            <Button variant="dynamicIcon"
-            initialIcon={ShareIcon}
-            alternateIcon={EnterIcon}
-            onCallback={updateSelection}>
-              <TypewriterBox text="Share My Weather" selected={writerSelection["share"]} id="share" autoNext="copyright" callBack={updateSelection}  />
-            </Button>
+          <TypewriterBox text="" selected={writerSelection["share"]} id="share" autoNext="copyright" callBack={updateSelection}  />
+
+            
           </div>
         </div>
       </main>
@@ -150,6 +147,16 @@ export default function Home() {
     </div>
   )
 }
+
+/*
+<Button variant="dynamicIcon"
+            initialIcon={ShareIcon}
+            alternateIcon={EnterIcon}
+            onCallback={updateSelection}>
+              <TypewriterBox text="Share My Weather" selected={writerSelection["share"]} id="share" autoNext="copyright" callBack={updateSelection}  />
+            </Button>
+
+*/
 
 //@ts-ignore
 function ShareIcon(props) {
