@@ -40,7 +40,6 @@ export function TypewriteInput({ text, id, autoNext = "", selected, callBack, on
           if (count - lastType > (Math.random() * 4 + 2)) {
             setLastType(count);
             setCurrentText(currentText + goalText[currentText.length]);
-            console.log( currentText + goalText[currentText.length])
             for (const [key, value] of Object.entries(CityDict)) {
                 if (key.toLowerCase() === (currentText + goalText[currentText.length]).toLowerCase()) {
                    // console.log(`Does ${(currentText + goalText[currentText.length]).toLowerCase()} match ${key.toLowerCase()}`)
